@@ -1,0 +1,199 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+/* MAIN STYLE */
+:root{
+  --dark-orange: #c1421e;
+  --btn-orange: #da6444;
+  --btn-hover-orange: #e66542;
+
+  --green: #62da44;
+  --white: rgba(255, 255, 255, 0.891);
+
+  --bg-beige: #F5EAD5;
+  --btn-beige: #dbd1c0;
+
+  --btn-hover-grey: #b2aa9c;
+
+  --text-dark: rgb(50, 10, 19);
+}
+*{
+  color: var(--text-dark);
+  font-family: "Concert One", sans-serif;
+  font-style: normal;
+}
+body{
+    background-color: var(--bg-beige);
+}
+/* HEADER STYLE */
+#header{
+    background-color: var(--dark-orange);
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#logo{
+  font-weight: 400;
+  font-size: 50px;
+}
+#log-in-btn{
+  border: none;
+  background-color: var(--btn-orange);
+  border-radius: 10px;
+  height: 40px;
+  width: 90px;
+  font-size: 20px;
+}
+#log-in-btn:hover{
+  background-color: var(--btn-hover-orange);
+  cursor: pointer;
+}
+
+
+/* MAIN CONTENT STYLE */
+#add-book-btn-container{
+  text-align: center;
+  padding: 20px;
+}
+#add-book-btn{
+  font-size: 28px;
+  border: none;
+  background-color: var(--btn-beige);
+  border-radius: 10px;
+  height: 60px;
+  width: 180px;
+}
+#add-book-btn:hover{
+  background-color: var(--btn-hover-grey);
+  cursor: pointer;
+}
+/* BOOK GRID STYLE */
+#books-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+  gap: 40px;
+}
+  /* BOOK ITEM STYLE */
+.book-item{
+  background-color: var(--btn-orange);
+  border-radius: 10px;
+
+  padding: 15px 25px;
+  
+
+  font-size: 25px;
+}
+.book-item .book-info{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.book-info > div{
+  overflow-x: auto;
+}
+
+
+.delete-btn{
+  border: none;
+  background-color: var(--dark-orange);
+  border-radius: 10px;
+  height: 45px;
+  width: 150px;
+
+  margin-top: 10px;
+}
+.delete-btn:hover{
+  background-color: #d5502b;
+}
+
+/* DIALOG STYLE */
+dialog{
+  background-color: var(--dark-orange);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  font-size: 25px;
+  margin: auto;
+
+  text-align: center;
+}
+.input-field{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+
+  font-size: 30px;
+  margin: 10px 0;
+}
+.input-field input{
+  background-color: var(--white);
+  border: none;
+  border-radius: 10px;
+}
+.input-field input:focus{
+  outline: none;
+}
+input[type='checkbox']{
+  size: 30px;
+}
+#new-book-dialog> p{
+  font-size: 40px;
+}
+#close-btn, #confirm-btn{
+  border: none;
+  background-color: var(--btn-orange);
+  border-radius: 10px;
+  height: 45px;
+  width: 150px;
+}
+
+#close-btn:hover, #confirm-btn:hover{
+  background-color: var(--btn-hover-orange);
+  cursor: pointer;
+}
+
+
+/* SCROLLBAR STYLE */
+*::-webkit-scrollbar {
+  height: 7px;
+}
+ 
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: var(--dark-orange);
+  outline: none;
+  border-radius: 10px;
+}

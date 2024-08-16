@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Library App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="logo">Library</div>
+            <button id="log-in-btn">Log In</button>
+        </div>
+
+        <div id="main-content">
+            <div id="add-book-btn-container">
+                <button id="add-book-btn">+ Add Book</button>
+            </div>
+
+            <div id="books-grid"></div>
+        </div>
+        
+        <dialog id="new-book-dialog">
+            
+                <p>New Book</p>
+
+                <div class="input-field">
+                    <label for="nb-title">Title: </label>
+                    <input type="text" name="nb-title" id="nb-title">
+                </div>
+
+                <div class="input-field">
+                    <label for="nb-author">Author: </label>
+                    <input type="text" name="nb-author" id="nb-author">
+                </div>
+
+                <div class="input-field">
+                    <label for="nb-pages">Pages: </label>
+                    <input type="number" name="nb-pages" id="nb-pages">
+                </div>
+
+                <div class="input-field">
+                    <label for="nb-read"><p>Read: </p></label>
+                    <input id="nb-read" type="checkbox">
+                </div>
+
+                <div>
+                    <input type="submit" id="close-btn" value="Close">
+                    <button id="confirm-btn" value="default">Confirm</button>
+                </div>
+            
+        </dialog>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>
