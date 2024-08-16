@@ -12,6 +12,8 @@ const nbTitle = document.getElementById("nb-title");
 const nbNrPages = document.getElementById("nb-pages");
 const nbRead = document.getElementById("nb-read");
 
+let isDialogOpen = false; // to track the dialog window
+
 function Book(title, author, nrPages, read) {
     this.author = author;
     this.title = title;
@@ -72,15 +74,28 @@ function clearDialogWindow() {
 // show dialog
 addNewBookBtn.addEventListener("click", () => {
     nbDialog.showModal();
+    isDialogOpen = true;
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && isDialogOpen) {
+        e.preventDefault();
+        confirmBtn.click();
+    }
+});
+
+document.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" && !isDialogOpen) {
+        e.preventDefault(); // Prevent any default action
+    }
 });
 // 'close' btn
 closeBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
     clearDialogWindow();
-
     nbDialog.close();
+    isDialogOpen = false;
 });
+
 // 'confirm' btn
 confirmBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -92,7 +107,9 @@ confirmBtn.addEventListener("click", (e) => {
     clearDialogWindow();
 
     nbDialog.close();
+    isDialogOpen = false;
 });
+
 booksGrid.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
         const bookItem = e.target.closest(".book-item");
